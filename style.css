@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/*
+################
+               Global
+################
+*/
+:root {
+  --prim-color: #3a3a3a;
+  --sec-color: #e02c6d;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: var(--prim-color);
+  font-weight: 700;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.fw4 {
+  font-weight: 400;
+}
+.fw5 {
+  font-weight: 500;
+}
+.fw6 {
+  font-weight: 600;
+}
+
+/*
+################
+               Top Container
+################
+*/
+.top-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 87px;
+}
+.top-container-blog {
+  margin-top: 50px;
+  display: flex;
+}
+.blog-content {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blog-photo {
+  flex: 50%;
+  display: flex;
+  justify-content: end;
+}
+.blog-content > h1 {
+  font-size: 52px;
+}
+.blog-content p {
+  font-weight: 600;
+  margin: 16px 0 28px 0;
+}
+.blog-button button {
+  background-color: var(--sec-color);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 40px;
+  border: none;
+  transition: transform 0.3s ease-in;
+}
+.blog-button button:hover {
+  transform: scale(1.1);
+}
+.blog-button button .fa-arrow-right {
+  color: white;
+  margin-left: 10px;
+}
+
+/*
+################
+               Popular Collection
+################
+*/
+.main {
+  margin-top: 120px;
+  font-size: 28px;
+}
+.product-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.products {
+  max-width: 1050px;
+}
+.product-container {
+  /* max-width: 1050px; */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  margin-bottom: 50px;
+}
+.product-card {
+  /* border: 3px solid red; */
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+.product-div {
+  margin: 15px;
+}
+.product-card .product-photo img {
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 5px;
+}
+.product-card .product-price p {
+  font-size: 24px;
+  margin-top: 12px;
+}
+.fas {
+  font-size: 16px;
+  color: rgba(255, 165, 0.6);
+}
+.rating-number {
+  font-size: 14px;
+  margin-left: 8px;
+}
+.product-details p {
+  font-size: 14px;
+}
+.see-more {
+  color: var(--sec-color);
+  text-align: right;
+  font-size: 16px;
+}
+.see-more .fa-arrow-right {
+  margin-left: 8px;
+  color: var(--sec-color);
+}
+
+/*
+################
+               Media Query
+################
+*/
+
+/* For Mobile */
+@media only screen and (max-width: 688px) {
+  body {
+    margin: 35px 16px;
+  }
+  .logo {
+    text-align: center;
+  }
+  .blog-photo {
+    justify-content: center;
+  }
+  .blog-photo img {
+    width: 90%;
+  }
+  .top-container-blog {
+    flex-direction: column;
+  }
+  .blog-content {
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+  }
+  .blog-content h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 20px;
+  }
+  .blog-content p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .blog-button button {
+    font-weight: 500;
+  }
+}
