@@ -1,13 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
-/*
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Manrope&family=Poppins:wght@400;700&display=swap"); /*
 ################
                Global
 ################
 */
 :root {
   --prim-color: #3a3a3a;
-  --sec-color: #e02c6d;
+  /* --sec-color: #e02c6d; */
+  --sec-color: #3045a1;
 }
 * {
   margin: 0;
@@ -31,7 +30,25 @@ body {
 .fw6 {
   font-weight: 600;
 }
-
+@keyframes my-anime {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(10px);
+  }
+}
+@keyframes my-anime2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*
 ################
                Top Container
@@ -41,6 +58,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 87px;
+}
+header {
+  margin: 0 15px;
 }
 .top-container-blog {
   margin-top: 50px;
@@ -75,6 +95,12 @@ body {
 .blog-button button:hover {
   transform: scale(1.1);
 }
+.blog-button button:hover .fa-arrow-right {
+  animation-name: my-anime;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
 .blog-button button .fa-arrow-right {
   color: white;
   margin-left: 10px;
@@ -98,12 +124,12 @@ body {
   margin: 0 auto;
 }
 .product-container {
-  /* max-width: 1050px; */
+  margin: 0 15px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .product-card {
   /* border: 3px solid red; */
@@ -131,12 +157,23 @@ body {
   margin-left: 8px;
 }
 .product-details p {
+  font-family: "Inter", sans-serif;
   font-size: 14px;
 }
 .see-more {
+  margin: 0 15px;
   color: var(--sec-color);
-  text-align: right;
+  display: block;
+  margin-left: auto;
+  margin-right: 015px;
   font-size: 16px;
+  transition: transform 0.3s ease-in;
+  border: none;
+  background-color: white;
+}
+.see-more:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .see-more .fa-arrow-right {
   margin-left: 8px;
@@ -145,15 +182,106 @@ body {
 
 /*
 ################
+               My Own
+################
+*/
+.my-own {
+  text-align: center;
+}
+.my-own-title {
+  position: relative;
+  top: 50px;
+}
+.quote {
+  position: relative;
+  left: 0;
+  top: 100px;
+}
+.review-box {
+  margin-top: 60px;
+  width: 100%;
+  background-color: rgba(48, 69, 161, 0.1);
+  border-radius: 10px;
+}
+.person-review img {
+  margin-top: 60px;
+  width: 100px;
+  margin-bottom: 20px;
+}
+.designation-reviewer p {
+  font-size: 20px;
+  color: rgba(58, 58, 58, 0.7);
+}
+.actual-review p {
+  margin-top: 30px;
+  font-size: 20px;
+  font-style: italic;
+  padding: 0 20px;
+  padding-bottom: 50px;
+}
+.post-review button {
+  margin-top: 20px;
+  background-color: var(--sec-color);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 15px;
+  border: none;
+}
+.post-review button:hover {
+  cursor: pointer;
+  animation-name: my-anime2;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+/*
+################
+               Footer
+################
+*/
+.footer {
+  margin-top: 100px;
+  height: 240px;
+  background-color: #0a0826;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-title p {
+  font-size: 24px;
+  color: white;
+}
+.footer-copyright p {
+  margin-top: 5px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+}
+.socials .fab {
+  margin-top: 20px;
+  color: white;
+  padding: 8px;
+  margin: 20px 8px 0 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: transform 0.3s ease-in;
+}
+.socials .fab:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+/*
+################
                Media Query
 ################
 */
 
 /* For Mobile */
 @media only screen and (max-width: 688px) {
-  body {
+  /* body {
     margin: 35px 16px;
-  }
+  } */
   .logo {
     text-align: center;
   }
@@ -167,7 +295,6 @@ body {
     flex-direction: column;
   }
   .blog-content {
-    flex: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,5 +312,73 @@ body {
   }
   .blog-button button {
     font-weight: 500;
+  }
+  .product-container {
+    display: block;
+    margin: 15px;
+  }
+  .product-card {
+    padding: 15px 15px;
+    margin-bottom: 15px;
+  }
+  .see-more {
+    margin-right: 15px;
+    margin-top: 30px;
+  }
+  .footer {
+    width: 100%;
+  }
+}
+/* For Tablet */
+@media only screen and (max-width: 992px) and (min-width: 688px) {
+  /* body {
+    margin: 35px 16px;
+  } */
+  .logo {
+    text-align: center;
+  }
+  .blog-photo {
+    justify-content: center;
+  }
+  .blog-photo img {
+    width: 90%;
+  }
+  .top-container-blog {
+    flex-direction: column;
+  }
+  .blog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+  }
+  .blog-content h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 20px;
+  }
+  .blog-content p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .blog-button button {
+    font-weight: 500;
+  }
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 15px;
+  }
+  .product-card {
+    padding: 15px 15px;
+    margin-bottom: 15px;
+  }
+  .see-more {
+    margin-right: 15px;
+    margin-top: 30px;
+  }
+  .footer {
+    width: 100%;
   }
 }
