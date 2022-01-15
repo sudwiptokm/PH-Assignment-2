@@ -51,14 +51,61 @@ body {
 }
 /*
 ################
-               Top Container
+               Nav Bar
 ################
 */
+.hidden-menu i {
+  color: var(--prim-color);
+  display: none;
+  font-size: 24px;
+}
+.hidden-menu i:hover {
+  display: inline-block;
+  transform: scale(1.2);
+  color: var(--sec-color);
+  cursor: pointer;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 87px;
 }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.icon-sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-sec a:hover,
+.fas:hover {
+  cursor: pointer;
+  display: inline-block;
+  transform: scale(1.2);
+  color: var(--sec-color);
+}
+.navbar-icons a {
+  text-decoration: none;
+  color: var(--prim-color);
+  margin-right: 34px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.navbar a i {
+  color: var(--prim-color);
+  font-size: 24px;
+  padding-top: 3px;
+}
+
+/*
+################
+               Top Container
+################
+*/
+
 header {
   margin: 0 15px;
 }
@@ -142,7 +189,7 @@ header {
 }
 .brand-logo-individual {
   /* height: 30px; */
-  padding: 30px;
+  padding: 20px30px;
 }
 
 /*
@@ -367,6 +414,18 @@ header {
   .footer {
     width: 100%;
   }
+  .navbar-icons {
+    display: none;
+  }
+  .hidden-menu i {
+    display: block;
+  }
+  .navbar {
+    display: flex;
+  }
+  .hidden-menu {
+    order: -1;
+  }
 }
 /* For Tablet */
 @media only screen and (max-width: 992px) and (min-width: 688px) {
@@ -419,5 +478,17 @@ header {
   }
   .footer {
     width: 100%;
+  }
+  .navbar-icons {
+    display: none;
+  }
+  .hidden-menu i {
+    display: block;
+  }
+  .navbar {
+    display: flex;
+  }
+  .hidden-menu {
+    order: -1;
   }
 }
