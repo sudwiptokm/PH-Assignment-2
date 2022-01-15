@@ -213,14 +213,12 @@ header {
   flex-wrap: wrap;
 }
 .brand-logo-individual {
-  /* height: 30px; */
   padding: 20px 30px;
   transition: transform 0.2s ease-in-out;
 }
 .brand-logo-individual:hover {
-  /* height: 30px; */
   transform: scale(1.3);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /*
