@@ -16,6 +16,9 @@
   color: var(--prim-color);
   font-weight: 700;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   max-width: 1440px;
